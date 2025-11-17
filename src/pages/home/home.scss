@@ -42,6 +42,9 @@
                 .carousel-inner,.carousel-item{
                     height: 100%;
                 }
+                .carousel-inner.active img{
+                    width:100%;
+                }
                 .gatsby-image-wrapper {
                     position: relative;
                     overflow: hidden;
@@ -682,13 +685,13 @@
                 z-index: 1;
               }
               
-              .zoom-animation {
-               // animation: zoomIn 13s ease-in-out forwards;
-              }
+            //   .zoom-animation {
+            //    // animation: zoomIn 13s ease-in-out forwards;
+            //   }
               
            }
 }
-
+img{width:100%;}
 .facilities-main{
     background-color: #051114;
     padding-top: 40px;

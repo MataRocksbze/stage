@@ -1,13 +1,13 @@
-fragment PageDineIn on PageDineIn {
+fragment Tour on Tour {
   stage
   publishedAt
   updatedAt
   createdAt
   remoteId: id
-  pageTitle
-  title1
-  title2
-  content {
+  tourOrder
+  touritle
+  price
+  description {
     ... on RichText {
       raw
       html
@@ -15,24 +15,25 @@ fragment PageDineIn on PageDineIn {
       text
     }
   }
-  headerImage {
-    ... on GalleryImage {
-      stage
-      id
-      imageAltText
-      imageTitle
-      image {
-        ... on Asset {
-          remoteTypeName: __typename
-          remoteId: id
-          locale
-          stage
-        }
-      }
-      updatedAt
+  slug
+  features {
+    ... on RichText {
+      raw
+      html
+      markdown
+      text
     }
   }
-  menuSlider {
+  services {
+    ... on RichText {
+      raw
+      html
+      markdown
+      text
+    }
+  }
+  tourPageLink
+  tourImage {
     ... on GalleryImage {
       stage
       id

@@ -18,6 +18,7 @@ fragment HomeSlideShow on HomeSlideShow {
           stage
         }
       }
+      updatedAt
     }
   }
   publishedBy {

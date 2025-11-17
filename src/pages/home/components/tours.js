@@ -112,7 +112,7 @@ render={data => (
                       ? "Diving Blue Hole"
                       : "View All Tours"}
                   </h1>
-                  <a href="/coming-soon/" className='book-button' >
+                  <a href="/tours" className='book-button' >
                       Book Today
                   </a>
                 </div>

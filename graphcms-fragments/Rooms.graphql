@@ -4,6 +4,7 @@ fragment Rooms on Rooms {
   updatedAt
   createdAt
   remoteId: id
+  roomOrder
   roomTitle
   price
   bedCount
@@ -51,6 +52,7 @@ fragment Rooms on Rooms {
           stage
         }
       }
+      updatedAt
     }
   }
   roomGallery {
@@ -67,6 +69,7 @@ fragment Rooms on Rooms {
           stage
         }
       }
+      updatedAt
     }
   }
   publishedBy {

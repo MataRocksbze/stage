@@ -27,6 +27,7 @@ fragment PageAboutUs on PageAboutUs {
           stage
         }
       }
+      updatedAt
     }
   }
   publishedBy {

@@ -1,0 +1,13 @@
+[build]
+  command = "npm install --legacy-peer-deps && npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# For Gatsby client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

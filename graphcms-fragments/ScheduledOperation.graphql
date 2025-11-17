@@ -58,6 +58,11 @@ fragment ScheduledOperation on ScheduledOperation {
       remoteId: id
       stage
     }
+    ... on HomeVideo {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
     ... on HomeWelcome {
       remoteTypeName: __typename
       remoteId: id
@@ -73,7 +78,17 @@ fragment ScheduledOperation on ScheduledOperation {
       remoteId: id
       stage
     }
+    ... on PageDineIn {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
     ... on Rooms {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Tour {
       remoteTypeName: __typename
       remoteId: id
       stage

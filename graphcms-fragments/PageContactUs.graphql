@@ -27,6 +27,7 @@ fragment PageContactUs on PageContactUs {
           stage
         }
       }
+      updatedAt
     }
   }
   publishedBy {
