@@ -43,6 +43,10 @@ function Tours() {
       }
     }
   `);
+// Or log just the tourPageLinks
+data.allGraphCmsTour.edges.forEach((edge, index) => {
+  console.log(`Tour ${index + 1} page link:`, edge.node.tourPageLink);
+});
 
   return (
     <div className="all-rooms">

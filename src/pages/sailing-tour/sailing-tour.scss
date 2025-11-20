@@ -1,0 +1,27 @@
+.sailing-tour-main {
+   .content-header{
+        img{
+            height:65vh;
+        }
+        .header-cont {
+            height: 50%;
+            bottom: 0;
+        }
+    }
+    .conetent-wrapper {
+        background-color: #071114;
+        padding: 60px 20px;
+    }   
+    .content-center {
+        padding: 40px 35px;
+        background-color: #fff;
+        max-width: 850px;
+        margin: 0 auto;
+        h3,h2{
+            padding-top:20px;
+        }
+        ul{
+            padding-bottom:20px;
+        }
+    }
+}

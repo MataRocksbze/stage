@@ -88,6 +88,11 @@ fragment ScheduledOperation on ScheduledOperation {
       remoteId: id
       stage
     }
+    ... on SailingTour {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
     ... on Tour {
       remoteTypeName: __typename
       remoteId: id
