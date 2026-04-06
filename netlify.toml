@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps --include=optional && npm rebuild @parcel/watcher && npm run build"
+  command = "npm install --legacy-peer-deps --include=optional && npm rebuild @parcel/watcher && npx gatsby clean && npm run build"
   publish = "public"
 
 [build.environment]
