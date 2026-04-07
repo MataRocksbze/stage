@@ -68,6 +68,9 @@ function App() {
                     <a title="" className="nav-link" href="/coming-soon/">Activities</a>
                 </li>
                 <li className="nav-item">
+                    <a title="" className="nav-link" href="/blog/">Blog</a>
+                </li>
+                <li className="nav-item">
                     <a title="" className="nav-link" href="/contact-us/">Contact Us</a>
                 </li>
                 </ul>

@@ -60,6 +60,7 @@ const plugins = [
         "PageContactUs",
         "PageDineIn",
         "Rooms",
+        "Blog",
         "SailingTour",
         "Tour",
       ],
