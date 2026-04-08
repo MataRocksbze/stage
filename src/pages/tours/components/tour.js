@@ -43,17 +43,17 @@ function Tours() {
       }
     }
   `);
-// Or log just the tourPageLinks
-data.allGraphCmsTour.edges.forEach((edge, index) => {
-  console.log(`Tour ${index + 1} page link:`, edge.node.tourPageLink);
-});
+  // Or log just the tourPageLinks
+  data.allGraphCmsTour.edges.forEach((edge, index) => {
+    console.log(`Tour ${index + 1} page link:`, edge.node.tourPageLink);
+  });
 
   return (
     <div className="all-rooms">
       <div className="content-header">
         <div className="header-overlay"></div>
         <StaticImage
-          src="../../../images/roomsHeader.png"
+          src="https://images.pexels.com/photos/15228087/pexels-photo-15228087.jpeg"
           quality={60}
           formats={["auto", "webp", "avif"]}
         />
@@ -73,7 +73,7 @@ data.allGraphCmsTour.edges.forEach((edge, index) => {
                         <div className="data-wrapper">
                           <div className="estate-type">
                             <div className="image-field">
-                              <img 
+                              <img
                                 src={tour.tourImage.image.url}
                                 quality={60}
                                 formats={["auto", "webp", "avif", "png", "jpg"]}
@@ -110,17 +110,17 @@ data.allGraphCmsTour.edges.forEach((edge, index) => {
                                         </div>
                                         <div className="book-now-block">
                                           {tour.tourPageLink ? (
-                                            <a 
-                                              href={tour.tourPageLink} 
-                                              target="_blank" 
-                                              rel="noopener noreferrer" 
+                                            <a
+                                              href={tour.tourPageLink}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
                                               className="book-button"
                                             >
                                               Book Now
                                             </a>
                                           ) : (
-                                            <a 
-                                              href={`/tours/${tour.slug}`} 
+                                            <a
+                                              href={`/tours/${tour.slug}`}
                                               className="book-button"
                                             >
                                               Learn More
