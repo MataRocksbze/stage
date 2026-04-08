@@ -44,6 +44,7 @@ const BlogPage = () => {
   }))
 
   const [activePost, setActivePost] = useState(blogPosts[0])
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const contentRef = useRef(null)
 
   useEffect(() => {
@@ -66,11 +67,16 @@ const BlogPage = () => {
 
   const handlePostClick = post => {
     setActivePost(post)
+    setIsSidebarOpen(false) // Close sidebar on mobile after selecting
     if (typeof window !== "undefined" && window.innerWidth <= 900 && contentRef.current) {
       setTimeout(() => {
         contentRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
       }, 100)
     }
+  }
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
   }
 
   return (
@@ -92,9 +98,12 @@ const BlogPage = () => {
         </div>
 
         <div className="blog-layout">
-          <aside className="blog-sidebar">
+          <aside className={`blog-sidebar ${isSidebarOpen ? "blog-sidebar--open" : ""}`}>
             <div className="blog-sidebar__inner">
-              <h2 className="blog-sidebar__heading">All Articles</h2>
+              <h2 className="blog-sidebar__heading" onClick={toggleSidebar} role="button" tabIndex={0}>
+                All Articles
+                <span className="blog-sidebar__toggle-icon">{isSidebarOpen ? "−" : "+"}</span>
+              </h2>
               <ul className="blog-sidebar__list">
                 {blogPosts.map(post => (
                   <li

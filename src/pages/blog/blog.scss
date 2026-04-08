@@ -150,15 +150,61 @@ $font: "Prompt", sans-serif;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: $gold;
-    margin: 0 0 16px;
+    margin: 0;
     padding: 0 24px 16px;
     border-bottom: 1px solid $dark-border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      cursor: pointer;
+      padding: 16px 24px;
+      border-bottom: none;
+      user-select: none;
+    }
+  }
+
+  &__toggle-icon {
+    display: none;
+    font-size: 30px;
+    font-weight: 300;
+    color: $gold;
+    width: 24px;
+    text-align: center;
+
+    @media (max-width: 900px) {
+      display: block;
+    }
   }
 
   &__list {
     list-style: none;
     margin: 0;
     padding: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    @media (max-width: 900px) {
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+    }
+  }
+
+  &--open {
+    @media (max-width: 900px) {
+      .blog-sidebar__list {
+        max-height: 500px; // Sufficient for titles
+        opacity: 1;
+        visibility: visible;
+        padding-bottom: 20px;
+      }
+
+      .blog-sidebar__heading {
+        border-bottom: 1px solid $dark-border;
+      }
+    }
   }
 
   &__item {
