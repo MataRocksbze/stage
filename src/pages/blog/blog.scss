@@ -120,8 +120,8 @@ $font: "Prompt", sans-serif;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba(255, 210, 141, 0.3);
-    border-radius: 2px;
+    background: rgba(255, 210, 141, 0.45);
+    border-radius: 4px;
   }
 
   @media (max-width: 1200px) {
@@ -194,10 +194,19 @@ $font: "Prompt", sans-serif;
   &--open {
     @media (max-width: 900px) {
       .blog-sidebar__list {
-        max-height: 500px; // Sufficient for titles
+        max-height: 60vh; // Dynamic height for mobile scroll
         opacity: 1;
         visibility: visible;
         padding-bottom: 20px;
+        overflow-y: auto; // Allow scrolling within the list
+        
+        // Mobile scrollbar style
+        &::-webkit-scrollbar {
+          width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: rgba(255, 210, 141, 0.4);
+        }
       }
 
       .blog-sidebar__heading {

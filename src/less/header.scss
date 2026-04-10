@@ -40,9 +40,9 @@
         }
     }
 
-    .navbar-light .navbar-nav .active>.nav-link {
-        color: #FFD28D;
-
+    .navbar-light .navbar-nav .nav-link.active {
+        color: #FFD28D !important;
+        opacity: 1;
     }
 
     .navbar-nav .nav-link:hover {
