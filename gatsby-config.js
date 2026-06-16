@@ -12,7 +12,9 @@ if (!process.env.HYGRAPH_ENDPOINT) {
 // -------------------------------
 // Google Tag Manager / GA4 setup
 // -------------------------------
-const trackingIds = ["G-B66RMFVKFW"]   // always include this new tag
+const trackingIds = [
+  // "G-B66RMFVKFW",   // temporarily disabled
+]   // always include this new tag
 
 if (process.env.GTAG_TRACKING_ID) {
   trackingIds.push(process.env.GTAG_TRACKING_ID)
