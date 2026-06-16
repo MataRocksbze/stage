@@ -9,9 +9,22 @@ if (!process.env.HYGRAPH_ENDPOINT) {
   require("dotenv").config({ path: ".env" })
 }
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
+// -------------------------------
+// Google Tag Manager / GA4 setup
+// -------------------------------
+const trackingIds = ["G-B66RMFVKFW"]   // always include this new tag
+
+if (process.env.GTAG_TRACKING_ID) {
+  trackingIds.push(process.env.GTAG_TRACKING_ID)
+} else {
+  console.warn(
+    "GTAG_TRACKING_ID not found in environment variables. Only the new tag G-B66RMFVKFW will be used."
+  )
+}
+
+// -------------------------------
+// Plugins
+// -------------------------------
 const plugins = [
   `gatsby-plugin-image`,
   {
@@ -38,12 +51,11 @@ const plugins = [
       endpoint: process.env.HYGRAPH_ENDPOINT,
       token: process.env.HYGRAPH_TOKEN,
       typePrefix: "GraphCms",
-      queryConcurrency: 1, // serial requests
+      queryConcurrency: 1,
       fragmentsPath: "graphcms-fragments",
       downloadLocalImages: false,
       buildMarkdownNodes: false,
       models: [
-        // 👈 add this
         "AllDaySailingCayeCaulker",
         "BacalarChicoReserve",
         "CaveTubing",
@@ -81,22 +93,16 @@ const plugins = [
   },
 ]
 
-// Conditionally add Google GTag if the ID is provided
-if (process.env.GTAG_TRACKING_ID) {
-  plugins.push({
-    resolve: `gatsby-plugin-google-gtag`,
-    options: {
-      trackingIds: [process.env.GTAG_TRACKING_ID],
-      pluginConfig: {
-        head: true,
-      },
+// Google gtag plugin (always added, trackingIds already set)
+plugins.push({
+  resolve: `gatsby-plugin-google-gtag`,
+  options: {
+    trackingIds,
+    pluginConfig: {
+      head: true,
     },
-  })
-} else {
-  console.warn(
-    "GTAG_TRACKING_ID not found in environment variables. Google Analytics will be disabled."
-  )
-}
+  },
+})
 
 // Ensure Hygraph endpoint is provided
 if (!process.env.HYGRAPH_ENDPOINT) {
